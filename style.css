@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  background-color: whitesmoke;
+}
+
+header {
+  display: inline;
+}
+
+.jumbotron {
+  background-color: #18b6ff;
+  color: white;
+  text-align: center;
+  padding: 10vw;
+}
+
+nav {
+  background-color: rgb(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid lightgray;
+  position: sticky;
+  top: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+nav .title {
+  flex: 1;
+  opacity: 0; /* Changes later on scroll */
+  transition: all 0.5s ease;
+  font-weight: 700;
+}
+
+nav .internal {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .internal a {
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+nav .internal a:hover {
+  background-color: rgb(24, 182, 255, 0.2);
+  color: #1861ff;
+}
+
+nav .external {
+  flex: 1;
+  text-align: right;
+}
+
+nav .external img:hover,
+nav .external svg:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+nav li {
+  display: inline;
+  list-style-type: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  color: gray;
+  text-align: center;
+}
+
+@keyframes title-in {
+  0% {
+    transform: translate(0, -2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes title-out {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,13 +1,13 @@
 # TODO List
 
 ## Mandatory Criteria
-- [ ] Use `<header>`.
-- [ ] Use `<nav>`.
-- [ ] Use `<footer>`.
+- [x] Use `<header>`.
+- [x] Use `<nav>`.
+- [x] Use `<footer>`.
 - [ ] Use `<main>`.
 - [ ] Use `<article>`.
 - [ ] Use `<aside>`.
-- [ ] Use `<a>` in `<nav>`.
+- [x] Add `<a>` link to my dicoding profile in `<nav>`.
 - [ ] Add image in `<aside>`.
 - [ ] Use **flexbox**.
 
@@ -17,8 +17,8 @@
 - [x] Use **IDE** (VSCode).
 
 ## Suggestions
-- [ ] Separate styling as external `.css` file.
+- [x] Separate styling as external `.css` file.
 - [ ] Add `alt` into images.
 - [ ] Use **heading** correctly.
 - [ ] Use `@media screen`.
-- [ ] Add little bit of `.js`.
+- [x] Add little bit of `.js`.
