@@ -4,6 +4,8 @@ const _html = document.querySelector("html");
 const _jumbotron = document.querySelector(".jumbotron");
 /** @type {HTMLDivElement} */
 const _navTitle = document.querySelector("nav .title");
+/** @type {HTMLAnchorElement} */
+const _navTitleAnc = document.querySelector("nav .title a");
 
 /**
  * Handle page scrolling.
@@ -13,8 +15,10 @@ function onScroll() {
   if (_html.scrollTop > _jumbotron.scrollHeight) {
     _navTitle.style.animation = "0.75s ease title-in";
     _navTitle.style.opacity = 1;
+    _navTitleAnc.style.display = "inline";
   } else if (_html.scrollTop < _jumbotron.scrollHeight / 2) {
     _navTitle.style.animation = null;
     _navTitle.style.opacity = 0;
+    setTimeout(() => (_navTitleAnc.style.display = "none"), 500);
   }
 }
