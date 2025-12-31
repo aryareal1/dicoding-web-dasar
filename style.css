@@ -1,3 +1,4 @@
+/* Universal and Root */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +14,13 @@ body {
   background-color: whitesmoke;
 }
 
+.container {
+  width: 95%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Header and Navigation */
 header {
   display: inline;
 }
@@ -26,15 +34,18 @@ header {
 
 nav {
   background-color: rgb(255, 255, 255, 0.85);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
   border-bottom: 1px solid lightgray;
   position: sticky;
   top: 0;
-  height: 3rem;
+}
+
+nav .container {
   display: flex;
   align-items: center;
   font-weight: 600;
   padding: 0 10px;
+  height: 3rem;
 }
 
 nav .title {
@@ -58,24 +69,35 @@ nav .internal a {
   transition: all 0.3s ease;
 }
 
-nav .internal a:hover {
+nav .internal a:hover,
+nav .internal a:focus {
   background-color: rgb(24, 182, 255, 0.2);
   color: #1861ff;
+  outline-color: #1861ff;
 }
 
 nav .external {
   flex: 1;
-  text-align: right;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 5px;
+}
+
+nav .external a {
+  display: flex;
 }
 
 nav .external img:hover,
-nav .external svg:hover {
+nav .external svg:hover,
+nav .external a:focus img,
+nav .external a:focus svg {
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
 nav li {
-  display: inline;
+  display: inline-block;
   list-style-type: none;
 }
 
@@ -84,11 +106,79 @@ nav a {
   color: black;
 }
 
-footer {
-  color: gray;
+/* Main Content and Aside */
+main {
+  margin-block: 2rem;
+}
+
+main .container {
+  display: flex;
+  gap: 2rem;
+}
+
+#content {
+  flex: 3;
+}
+
+#content h2 {
+  margin-block: 1rem 0.75rem;
+  color: #1861ff;
+}
+
+#content h3 {
+  margin-block: 1rem 0.5rem;
+  color: #18b6ff;
+}
+
+#content p {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+}
+
+#content section p:nth-child(n + 3) {
+  text-indent: 2rem;
+}
+
+aside {
+  flex: 1;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 4px 5px 2px rgb(0, 0, 0, 0.3);
   text-align: center;
 }
 
+aside img {
+  border-radius: 50%;
+}
+
+aside h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  color: gray;
+  text-align: center;
+  margin-block: 2rem;
+}
+
+@media screen and (max-width: 920px) {
+  main .container {
+    flex-direction: column;
+  }
+
+  #content {
+    order: 1;
+  }
+
+  aside {
+    order: 0;
+  }
+}
+
+/* Animation */
 @keyframes title-in {
   0% {
     transform: translate(0, -2rem);
@@ -97,15 +187,5 @@ footer {
   100% {
     transform: translate(0);
     opacity: 1;
-  }
-}
-
-@keyframes title-out {
-  0% {
-    transform: translate(0);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
