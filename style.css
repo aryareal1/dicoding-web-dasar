@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -136,7 +137,7 @@ main .container {
 }
 
 #content {
-  flex: 3;
+  flex: 8;
 }
 
 #content h2 {
@@ -159,7 +160,15 @@ main .container {
 }
 
 aside {
-  flex: 1;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+aside article {
   background-color: white;
   padding: 1rem;
   border-radius: 10px;
@@ -167,13 +176,22 @@ aside {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 1rem;
+  max-width: 47.8rem;
 }
 
-aside img {
+aside #bio img {
   border-radius: 50%;
   margin-block: 1rem;
+}
+
+aside #event a {
+  color: red;
+  font-weight: bold;
+}
+
+aside #event img {
+  width: 100%;
 }
 
 aside h2 {
