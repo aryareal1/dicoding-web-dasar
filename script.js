@@ -19,6 +19,9 @@ function onScroll() {
   } else if (_html.scrollTop < _jumbotron.scrollHeight / 2) {
     _navTitle.style.animation = null;
     _navTitle.style.opacity = 0;
-    setTimeout(() => (_navTitleAnc.style.display = "none"), 500);
+    setTimeout(() => {
+      if (_html.scrollTop < _jumbotron.scrollHeight)
+        _navTitleAnc.style.display = "none";
+    }, 500);
   }
 }
